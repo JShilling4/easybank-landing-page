@@ -50,12 +50,11 @@ export default {
     font-weight: 600;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.8);
-    background-color: $red-bright;
+    background: linear-gradient(to right, $green-lime, $cyan-bright);
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, letter-spacing .3s;
     &.hovering {
-        background-color: lighten($red-bright, 5%);
         letter-spacing: 1.4px;
     }
 }

@@ -21,6 +21,6 @@ export default {
 .hero {
     height: 50rem;
     padding: 6rem 0;
-    background-color: $red-bright;
+    background-color: $green-lime;
 }
 </style>
