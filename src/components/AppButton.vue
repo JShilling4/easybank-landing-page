@@ -23,16 +23,21 @@ export default {
         },
         minWidth: {
             type: String,
-            default: "18rem",
+            default: "20rem",
+        },
+        fontSize: {
+            type: String,
+            default: "1.6rem",
         }
     },
     data() {
         return {
             styleObject: {
                 boxShadow: this.showShadow
-                    ? "0 13px 15px -13px rgb(242, 95, 58)"
+                    ? "0 13px 15px -13px rgb(150, 152, 166)"
                     : "",
                 minWidth: this.minWidth,
+                fontSize: this.fontSize,
             },
             isHovering: false,
         };
@@ -43,11 +48,12 @@ export default {
 <style lang="scss" scoped>
 .button {
     font-family: "Be Vietnam", sans-serif;
-    padding: 1.4rem 3.4rem 1.6rem;
+    padding: 0 3.4rem;
+    height: 5.5rem;
     border: none;
     border-radius: 3rem;
     outline: none;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.8);
     background: linear-gradient(to right, $green-lime, $cyan-bright);

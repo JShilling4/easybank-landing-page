@@ -70,14 +70,9 @@
 
             <div class="col-3">
                 <div class="subscribe-container">
-                    <input
-                        type="text"
-                        placeholder="Updates in your inbox..."
-                    >
                     <AppButton
                         :show-shadow="false"
-                        min-width="9rem"
-                    >Go</AppButton>
+                    >Request Invite</AppButton>
                 </div>
 
                 <p class="copyright">
@@ -210,14 +205,8 @@
             display: flex;
             align-items: center;
             margin-bottom: 4rem;
-            input {
-                height: 4rem;
-                padding: 0 2rem;
-                border-radius: 3rem;
-                border: none;
-                margin-right: 1rem;
-                flex-grow: 1;
-                outline: none;
+            button {
+                margin-left: auto;
             }
         }
         .copyright {

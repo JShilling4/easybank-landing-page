@@ -11,6 +11,8 @@ html {
 body {
     font-size: 1.6rem;
     background-color: #fdfdfd;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -26,7 +28,7 @@ img {
 }
 
 .outer-container {
-    max-width: 1400px;
+    max-width: 1450px;
     padding: 0 2rem;
     margin: 0 auto;
 }

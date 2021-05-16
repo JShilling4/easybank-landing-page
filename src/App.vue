@@ -1,6 +1,5 @@
 <template>
     <TheNavbar
-        class="outer-container"
         :show-mobile-menu="showMobileMenu || windowWidth > 768"
         @open="showMobileMenu = true"
         @close="showMobileMenu = false"
