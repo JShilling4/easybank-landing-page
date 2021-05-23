@@ -210,8 +210,11 @@ export default {
 .hero {
 	position: relative;
 	height: 80rem;
-    max-width: 100%;
+	max-width: 100%;
 	background-color: $gray-extra-light;
+	@include breakpoint(ipadPro) {
+		height: 60rem;
+	}
 	&__overlay {
 		position: absolute;
 		right: -15%;
@@ -221,12 +224,19 @@ export default {
 		background-size: cover;
 		background-position: center -225px;
 		background-size: 112%;
+		background-repeat: no-repeat;
+		@include breakpoint(desktop) {
+			background-position: center -65px;
+		}
 		img.mockups {
 			position: absolute;
 			top: -20%;
 			right: 15%;
 			width: 75%;
 			z-index: 2;
+			@include breakpoint(desktop) {
+				top: -5%;
+			}
 		}
 	}
 	&__outer-container {
@@ -239,6 +249,12 @@ export default {
 		font-weight: 300;
 		font-size: 6.6rem;
 		color: #333;
+		@include breakpoint(desktop) {
+			font-size: 6rem;
+		}
+		@include breakpoint(ipadPro) {
+			font-size: 5.5rem;
+		}
 	}
 	&__copy {
 		margin-bottom: 4.5rem;
@@ -258,14 +274,28 @@ export default {
 	background-color: $gray-blue-light;
 	.top {
 		width: 60%;
+		@include breakpoint(ipadPro) {
+			margin: 0 auto;
+			width: 80%;
+			text-align: center;
+		}
 	}
-    .copy {
-        margin-bottom: 8rem;
-    }
+	.copy {
+		margin-bottom: 8rem;
+	}
 	.feature-container {
 		display: flex;
+		@include breakpoint(ipadPro) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 		.feature {
 			width: 25%;
+			@include breakpoint(ipadPro) {
+				width: 40%;
+				text-align: center;
+				padding: 0 3rem;
+			}
 			&:not(:last-child) {
 				margin-right: 2rem;
 			}
@@ -281,6 +311,9 @@ export default {
 			}
 			&__copy {
 				font-size: 2rem;
+				@include breakpoint(desktop) {
+					font-size: 1.6rem;
+				}
 			}
 		}
 	}
@@ -288,53 +321,65 @@ export default {
 
 .articles {
 	padding: 12rem 0;
-    background-color: $gray-extra-light;
+	background-color: $gray-extra-light;
 	.articles-container {
 		display: flex;
+		@include breakpoint(ipadPro) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
-    .section-heading {
-        margin-bottom: 6rem;
-    }
+	.section-heading {
+		margin-bottom: 6rem;
+		@include breakpoint(ipadPro) {
+			text-align: center;
+		}
+	}
 	.article {
 		width: 25%;
-        background-color: #fff;
-        box-shadow: 0 1rem 1.25rem rgba(0,0,0,.3);
-        border-radius: 3px;
-        transform: scale(.95);
-        transition: transform .5s, box-shadow .5s;
-        backface-visibility: hidden;
-        will-change: transform, box-shadow;
-        cursor: pointer;
-        &:hover {
-            transform: scale(1) translateY(-1rem);
-            box-shadow: 0 1.5rem 2.25rem rgba(0,0,0,.25);
-        }
+		background-color: #fff;
+		box-shadow: 0 1rem 1.25rem rgba(0, 0, 0, 0.3);
+		border-radius: 3px;
+		transform: scale(0.95);
+		transition: transform 0.5s, box-shadow 0.5s;
+		backface-visibility: hidden;
+		will-change: transform, box-shadow;
+		cursor: pointer;
+		@include breakpoint(ipadPro) {
+			width: 40%;
+            margin: 0 2rem 4rem;
+		}
+		&:hover {
+			transform: scale(1) translateY(-1rem);
+			box-shadow: 0 1.5rem 2.25rem rgba(0, 0, 0, 0.25);
+		}
 		&:not(:last-child) {
-			margin-right: 4rem;
+			margin-right: 2rem;
+
 		}
 		img {
 			object-fit: cover;
 			width: 100%;
 			height: 20rem;
-            border-top-right-radius: 3px;
-            border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			border-top-left-radius: 3px;
 		}
-        .details {
-            padding: 3rem;
-            &__author {
-                display: inline-block;
-                margin-bottom: 2rem;
-                font-size: 1.4rem;
-                color: $gray-blue;
-            }
-            &__heading {
-                margin-bottom: 1.5rem;
-                font-weight: 400;
-            }
-            &__copy {
-                font-size: 1.6rem;
-            }
-        }
+		.details {
+			padding: 3rem;
+			&__author {
+				display: inline-block;
+				margin-bottom: 2rem;
+				font-size: 1.4rem;
+				color: $gray-blue;
+			}
+			&__heading {
+				margin-bottom: 1.5rem;
+				font-weight: 400;
+			}
+			&__copy {
+				font-size: 1.6rem;
+			}
+		}
 	}
 }
 </style>
