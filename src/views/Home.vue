@@ -1,13 +1,6 @@
 <template>
 	<div class="home">
 		<section class="hero">
-			<div class="hero__overlay">
-				<img
-					src="@/assets/images/image-mockups.png"
-					class="mockups"
-					alt=""
-				>
-			</div>
 			<div class="hero__outer-container outer-container">
 				<div class="col-1">
 					<h1 class="hero__heading">
@@ -20,7 +13,12 @@
 				</div>
 
 				<div class="col-2">
-
+					<div class="overlay"></div>
+					<img
+						src="@/assets/images/image-mockups.png"
+						class="mockups"
+						alt=""
+					>
 				</div>
 			</div>
 		</section>
@@ -194,6 +192,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home {
+    overflow-x: hidden;
+}
 .section-heading {
 	margin-bottom: 3rem;
 	font-size: 4.8rem;
@@ -213,32 +214,12 @@ export default {
 	max-width: 100%;
 	background-color: $gray-extra-light;
 	@include breakpoint(ipadPro) {
-		height: 60rem;
+		height: 55rem;
 	}
-	&__overlay {
-		position: absolute;
-		right: -15%;
-		width: 65%;
-		height: 100%;
-		background-image: url("~@/assets/images/bg-intro-desktop.svg");
-		background-size: cover;
-		background-position: center -225px;
-		background-size: 112%;
-		background-repeat: no-repeat;
-		@include breakpoint(desktop) {
-			background-position: center -65px;
-		}
-		img.mockups {
-			position: absolute;
-			top: -20%;
-			right: 15%;
-			width: 75%;
-			z-index: 2;
-			@include breakpoint(desktop) {
-				top: -5%;
-			}
-		}
+	@include breakpoint(tablet-land) {
+		height: 55rem;
 	}
+
 	&__outer-container {
 		display: flex;
 		align-items: center;
@@ -260,12 +241,44 @@ export default {
 		margin-bottom: 4.5rem;
 	}
 	.col-1 {
-		width: 58rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+		width: 40%;
+        height: 100%;
+        @include breakpoint(desktop) {
+            width: 50%;
+        }
 	}
 	.col-2 {
-		position: relative;
-		width: 60%;
-		height: 100%;
+		position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100%;
+		.overlay {
+			width: 100%;
+			height: 100%;
+			background-image: url("~@/assets/images/bg-intro-desktop.svg");
+			background-size: cover;
+			background-position: 100px -225px;
+			background-size: 112%;
+			background-repeat: no-repeat;
+			@include breakpoint(ipadPro) {
+				background-position: 75px -50px;
+                background-size: 120%;
+			}
+		}
+		img.mockups {
+			position: absolute;
+			top: -20%;
+			right: -10%;
+			width: 85%;
+			z-index: 2;
+			@include breakpoint(desktop) {
+				top: -5%;
+			}
+		}
 	}
 }
 
@@ -347,7 +360,7 @@ export default {
 		cursor: pointer;
 		@include breakpoint(ipadPro) {
 			width: 40%;
-            margin: 0 2rem 4rem;
+			margin: 0 2rem 4rem;
 		}
 		&:hover {
 			transform: scale(1) translateY(-1rem);
@@ -355,7 +368,6 @@ export default {
 		}
 		&:not(:last-child) {
 			margin-right: 2rem;
-
 		}
 		img {
 			object-fit: cover;
