@@ -193,7 +193,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 .section-heading {
 	margin-bottom: 3rem;
@@ -217,13 +217,17 @@ export default {
 		height: 55rem;
 	}
 	@include breakpoint(tablet-land) {
-		height: 55rem;
+		height: auto;
+		padding-bottom: 12rem;
 	}
 
 	&__outer-container {
 		display: flex;
 		align-items: center;
 		height: 100%;
+        @include breakpoint(tablet-land) {
+            flex-wrap: wrap;
+        }
 	}
 	&__heading {
 		margin-bottom: 3.7rem;
@@ -236,26 +240,43 @@ export default {
 		@include breakpoint(ipadPro) {
 			font-size: 5.5rem;
 		}
+		@include breakpoint(tablet-land) {
+			text-align: center;
+		}
 	}
 	&__copy {
 		margin-bottom: 4.5rem;
+        @include breakpoint(tablet-land) {
+			text-align: center;
+		}
 	}
 	.col-1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		width: 40%;
-        height: 100%;
-        @include breakpoint(desktop) {
-            width: 50%;
-        }
+		height: 100%;
+		@include breakpoint(desktop) {
+			width: 50%;
+		}
+		@include breakpoint(tablet-land) {
+			width: 100%;
+			justify-content: flex-end;
+            order: 2;
+            margin-top: -19rem;
+		}
 	}
 	.col-2 {
 		position: absolute;
-        right: 0;
-        width: 60%;
-        height: 100%;
+		right: 0;
+		width: 60%;
+		height: 100%;
+		@include breakpoint(tablet-land) {
+			width: 100%;
+            order: 1;
+            position: static;
+		}
 		.overlay {
 			width: 100%;
 			height: 100%;
@@ -266,7 +287,13 @@ export default {
 			background-repeat: no-repeat;
 			@include breakpoint(ipadPro) {
 				background-position: 75px -50px;
-                background-size: 120%;
+				background-size: 120%;
+			}
+			@include breakpoint(tablet-land) {
+                position: absolute;
+                top: 0;
+				background-position: -140px -400px;
+                background-size: 150%;
 			}
 		}
 		img.mockups {
@@ -277,6 +304,11 @@ export default {
 			z-index: 2;
 			@include breakpoint(desktop) {
 				top: -5%;
+			}
+			@include breakpoint(tablet-land) {
+				right: -7%;
+				top: -19rem;
+                position: relative;
 			}
 		}
 	}
