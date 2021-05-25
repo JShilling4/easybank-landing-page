@@ -114,7 +114,7 @@
         height: 100%;
         width: 20%;
         @include breakpoint(laptop) {
-            order: 3;
+            order: 1;
             height: auto;
             width: 100%;
             align-items: center;
@@ -123,7 +123,7 @@
             width: 19rem;
             margin-bottom: 6rem;
             @include breakpoint(laptop) {
-                order: 2;
+                order: 1;
                 margin-bottom: 6rem;
             }
         }
@@ -131,7 +131,7 @@
             display: flex;
             align-items: flex-end;
             @include breakpoint(laptop) {
-                order: 1;
+                order: 2;
                 margin-bottom: 6rem;
                 text-align: center;
             }
@@ -170,7 +170,7 @@
             order: 2;
             height: 15rem;
             padding: 0;
-            width: 35rem;
+            width: 30rem;
             margin: 0 auto 8rem;
         }
         ul {
@@ -196,7 +196,7 @@
         min-width: 315px;
         height: 100%;
         @include breakpoint(laptop) {
-            order: 1;
+            order: 3;
             height: 10rem;
             width: 100%;
             align-items: center;
@@ -213,12 +213,12 @@
             text-align: right;
             color: $gray-blue;
             @include breakpoint(laptop) {
-                position: absolute;
-                bottom: 4rem;
-                left: 50%;
+                // position: absolute;
+                // bottom: 4rem;
+                // left: 50%;
                 width: 100%;
                 text-align: center;
-                transform: translateX(-50%);
+                // transform: translateX(-50%);
             }
         }
     }
