@@ -324,6 +324,12 @@ export default {
             @include breakpoint(tablet-port) {
                 background-position: -100px -305px;
             }
+            @include breakpoint(mobile) {
+                background-position: -85px -230px;
+            }
+            @include breakpoint(mobile-small) {
+                background-position: -60px -230px;
+            }
 		}
 		img.mockups {
 			position: absolute;

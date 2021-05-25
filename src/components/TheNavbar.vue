@@ -70,15 +70,15 @@ export default {
 	z-index: 999;
 	background-color: #fff;
 	width: 100%;
-
-	@include breakpoint(tablet-land) {
-		min-height: 10rem;
+    height: 10rem;
+	@include breakpoint(mobile) {
+		height: 7rem;
 	}
 	.outer-container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-        min-height: 10rem;
+        height: 100%;
 	}
 	.logo {
 		width: 15rem;
