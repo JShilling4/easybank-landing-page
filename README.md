@@ -1,4 +1,4 @@
-# vue-website-starter
+# easybank-landing-page
 
 ## Project setup
 ```
