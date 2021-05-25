@@ -200,12 +200,18 @@ export default {
 	font-size: 4.8rem;
 	font-weight: 400;
 	color: #333;
+	@include breakpoint(tablet-port) {
+		font-size: 3rem;
+	}
 }
 .copy {
 	color: $gray-blue;
 	font-weight: 400;
 	font-size: 2.2rem;
 	line-height: 1.5;
+	@include breakpoint(tablet-port) {
+		font-size: 1.7rem;
+	}
 }
 
 .hero {
@@ -220,7 +226,9 @@ export default {
 		height: auto;
 		padding-bottom: 12rem;
 	}
-
+	@include breakpoint(tablet-port) {
+		padding-bottom: 8rem;
+	}
 	&__outer-container {
 		display: flex;
 		align-items: center;
@@ -244,12 +252,25 @@ export default {
 		@include breakpoint(tablet-land) {
 			text-align: center;
 		}
+		@include breakpoint(tablet-port) {
+			font-size: 4rem;
+            margin-bottom: 2rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 3.6rem;
+		}
 	}
 	&__copy {
 		margin-bottom: 4.5rem;
-        @include breakpoint(tablet-land) {
+		@include breakpoint(tablet-land) {
 			text-align: center;
 		}
+		@include breakpoint(tablet-port) {
+			font-size: 1.7rem;
+		}
+        @include breakpoint(mobile) {
+            font-size: 1.5rem;
+        }
 	}
 	.col-1 {
 		display: flex;
@@ -264,9 +285,12 @@ export default {
 		@include breakpoint(tablet-land) {
 			width: 100%;
 			justify-content: flex-end;
-            order: 2;
-            margin-top: -19rem;
             padding: 0 2rem;
+			order: 2;
+			margin-top: -19rem;
+		}
+		@include breakpoint(tablet-port) {
+			margin-top: -11rem;
 		}
 	}
 	.col-2 {
@@ -278,7 +302,6 @@ export default {
 			width: 100%;
             order: 1;
             position: static;
-
 		}
 		.overlay {
 			width: 100%;
@@ -293,10 +316,10 @@ export default {
 				background-size: 120%;
 			}
 			@include breakpoint(tablet-land) {
-                position: absolute;
-                top: 0;
+				position: absolute;
+				top: 0;
 				background-position: -140px -400px;
-                background-size: 150%;
+				background-size: 150%;
 			}
             @include breakpoint(tablet-port) {
                 background-position: -100px -305px;
@@ -314,7 +337,10 @@ export default {
 			@include breakpoint(tablet-land) {
 				right: -7%;
 				top: -19rem;
-                position: relative;
+				position: relative;
+			}
+			@include breakpoint(tablet-port) {
+				top: -13rem;
 			}
 		}
 	}
@@ -323,17 +349,22 @@ export default {
 .whyEasybank {
 	padding: 12rem 0 6rem;
 	background-color: $gray-blue-light;
+	@include breakpoint(tablet-port) {
+		padding: 8rem 0 6rem;
+	}
 	.top {
 		width: 60%;
+		margin-bottom: 8rem;
 		@include breakpoint(ipadPro) {
-			margin: 0 auto;
+			margin: 0 auto 6rem;
 			width: 80%;
 			text-align: center;
 		}
+		@include breakpoint(tablet-port) {
+			width: 100%;
+		}
 	}
-	.copy {
-		margin-bottom: 8rem;
-	}
+
 	.feature-container {
 		display: flex;
 		@include breakpoint(ipadPro) {
@@ -347,8 +378,14 @@ export default {
 				text-align: center;
 				padding: 0 3rem;
 			}
+			@include breakpoint(tablet-port) {
+				width: 100%;
+			}
 			&:not(:last-child) {
 				margin-right: 2rem;
+				@include breakpoint(tablet-port) {
+					margin-right: 0;
+				}
 			}
 			&__icon {
 				margin-bottom: 3rem;
@@ -359,11 +396,20 @@ export default {
 				font-size: 2.8rem;
 				font-weight: 400;
 				color: #333;
+				@include breakpoint(tablet-port) {
+					font-size: 2.4rem;
+					margin-bottom: 2rem;
+				}
 			}
 			&__copy {
 				font-size: 2rem;
+				margin-bottom: 8rem;
 				@include breakpoint(desktop) {
 					font-size: 1.6rem;
+				}
+				@include breakpoint(tablet-port) {
+					font-size: 1.4rem;
+					margin-bottom: 4rem;
 				}
 			}
 		}
@@ -373,6 +419,9 @@ export default {
 .articles {
 	padding: 12rem 0;
 	background-color: $gray-extra-light;
+	@include breakpoint(tablet-port) {
+		padding: 8rem 0;
+	}
 	.articles-container {
 		display: flex;
 		@include breakpoint(ipadPro) {
@@ -400,12 +449,21 @@ export default {
 			width: 40%;
 			margin: 0 2rem 4rem;
 		}
+		@include breakpoint(tablet-port) {
+			width: 100%;
+		}
+		@include breakpoint(mobile) {
+			margin: 0 0 4rem;
+		}
 		&:hover {
 			transform: scale(1) translateY(-1rem);
 			box-shadow: 0 1.5rem 2.25rem rgba(0, 0, 0, 0.25);
 		}
 		&:not(:last-child) {
 			margin-right: 2rem;
+			@include breakpoint(mobile) {
+				margin-right: 0;
+			}
 		}
 		img {
 			object-fit: cover;
@@ -428,6 +486,9 @@ export default {
 			}
 			&__copy {
 				font-size: 1.6rem;
+				@include breakpoint(mobile) {
+					font-size: 1.5rem;
+				}
 			}
 		}
 	}

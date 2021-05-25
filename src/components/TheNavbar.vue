@@ -108,7 +108,7 @@ export default {
 			transition: color 0.3s;
 			@include breakpoint(tablet-land) {
 				margin: 0;
-				padding: 1.5rem 0;
+				padding: 3rem 0;
 				font-weight: 600;
 				font-size: 2.3rem;
 			}
@@ -132,7 +132,7 @@ export default {
 		}
 	}
 	.mobileClose {
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: 769px) {
 			display: none;
 		}
 	}
