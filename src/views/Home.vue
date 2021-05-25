@@ -227,6 +227,7 @@ export default {
 		height: 100%;
         @include breakpoint(tablet-land) {
             flex-wrap: wrap;
+            padding: 0;
         }
 	}
 	&__heading {
@@ -265,6 +266,7 @@ export default {
 			justify-content: flex-end;
             order: 2;
             margin-top: -19rem;
+            padding: 0 2rem;
 		}
 	}
 	.col-2 {
@@ -276,6 +278,7 @@ export default {
 			width: 100%;
             order: 1;
             position: static;
+
 		}
 		.overlay {
 			width: 100%;
@@ -295,6 +298,9 @@ export default {
 				background-position: -140px -400px;
                 background-size: 150%;
 			}
+            @include breakpoint(tablet-port) {
+                background-position: -100px -305px;
+            }
 		}
 		img.mockups {
 			position: absolute;
